@@ -1,5 +1,5 @@
 <script>
-document.addEventListener("DOMContentLoaded", function (event) {
+    document.addEventListener("DOMContentLoaded", function (event) {
 
     function getAllUrlParams(url) {
         var queryString = url ? url.split('?')[1] : window.location.search.slice(1);
@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
             if (url.indexOf(key + '=') === -1) {
                 url += (url.indexOf('?') !== -1 ? '&' : '?') + key + '=' + params[key];
             }
-        });
+        })
         return url;
     }
 
@@ -33,6 +33,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
     var links = document.querySelectorAll('a[href]');
     links.forEach(function(link) {
         link.href = addParametersToURL(link.href, urlParams);
+        });
     });
-});
 </script>
